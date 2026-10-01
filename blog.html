@@ -1,1 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>MZ Creations | Digital Marketing Blog</title>
+
+    <meta name="description" content="Practical digital marketing tips for restaurants, cafes, salons, gyms, clothing stores, local businesses and brands.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0A1220;
+            color: #FFFFFF;
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+        header {
+            background: #0A1220;
+            padding: 20px 7%;
+            border-bottom: 1px solid rgba(77, 208, 245, 0.15);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo .mz {
+            color: #4DD0F5;
+        }
+
+        .logo .creations {
+            color: #FFFFFF;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: #4DD0F5;
+        }
+
+        /* HERO */
+        .hero {
+            text-align: center;
+            padding: 90px 20px;
+            background: linear-gradient(
+                to bottom,
+                #1B3655,
+                #0C1A30
+            );
+        }
+
+        .hero span {
+            display: inline-block;
+            color: #4DD0F5;
+            border: 1px solid #4DD0F5;
+            border-radius: 50px;
+            padding: 7px 18px;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 64px);
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 .cyan {
+            color: #4DD0F5;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #D0D5DD;
+            font-size: 17px;
+        }
+
+        /* BLOG SECTION */
+        .blog-section {
+            padding: 70px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #D0D5DD;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .blog-card {
+            background: #101C2D;
+            border: 1px solid rgba(77, 208, 245, 0.18);
+            border-radius: 18px;
+            padding: 30px;
+            transition: 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-6px);
+            border-color: #4DD0F5;
+        }
+
+        .category {
+            color: #4DD0F5;
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .blog-card h3 {
+            font-size: 24px;
+            margin: 14px 0;
+        }
+
+        .blog-card p {
+            color: #D0D5DD;
+            margin-bottom: 25px;
+        }
+
+        .read-more {
+            display: inline-block;
+            color: #4DD0F5;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* CTA */
+        .cta {
+            margin: 30px 7% 70px;
+            padding: 60px 30px;
+            text-align: center;
+            border-radius: 22px;
+            background: linear-gradient(
+                135deg,
+                #1B3655,
+                #0C1A30
+            );
+            border: 1px solid rgba(77, 208, 245, 0.2);
+        }
+
+        .cta h2 {
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #D0D5DD;
+            max-width: 650px;
+            margin: 0 auto 25px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 13px 25px;
+            border-radius: 50px;
+            background: #4DD0F5;
+            color: #0A1220;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #070D17;
+            padding: 30px 7%;
+            text-align: center;
+            color: #D0D5DD;
+            font-size: 14px;
+        }
+
+        footer strong {
+            color: #4DD0F5;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 70px 20px;
+            }
+
+            .blog-section {
+                padding: 55px 5%;
+            }
+
+            .cta {
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <nav>
+
+            <div class="logo">
+                <span class="mz">MZ</span>
+                <span class="creations"> CREATIONS</span>
+            </div>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <span> MZ CREATIONS BLOG </span>
+
+        <h1>
+            Digital Marketing
+            <span class="cyan">Insights.</span>
+        </h1>
+
+        <p>
+            Practical digital marketing strategies, tips and ideas
+            to help local businesses grow their brand, reach more
+            customers and build a stronger online presence.
+        </p>
+
+    </section>
+
+
+    <!-- BLOG ARTICLES -->
+    <section class="blog-section">
+
+        <div class="section-title">
+
+            <h2>Latest Articles</h2>
+
+            <p>
+                Learn practical strategies you can apply to your business.
+            </p>
+
+        </div>
+
+
+        <div class="blog-grid">
+
+
+            <!-- ARTICLE 1 -->
+            <article class="blog-card">
+
+                <span class="category">
+                    Restaurant Marketing
+                </span>
+
+                <h3>
+                    How Restaurants Can Get More Customers Through Instagram
+                </h3>
+
+                <p>
+                    Discover practical Instagram marketing strategies
+                    restaurants and cafes can use to attract local customers,
+                    increase engagement and build their brand online.
+                </p>
+
+                <a href="blog-restaurant-instagram.html"
+                   class="read-more">
+                    Read Article →
+                </a>
+
+            </article>
+
+
+            <!-- ARTICLE 2 -->
+            <article class="blog-card">
+
+                <span class="category">
+                    Small Business Marketing
+                </span>
+
+                <h3>
+                    7 Digital Marketing Mistakes Small Businesses Should Avoid
+                </h3>
+
+                <p>
+                    Learn about common digital marketing mistakes that can
+                    limit your online growth and what small businesses can
+                    do differently.
+                </p>
+
+                <a href="blog-small-business-mistakes.html"
+                   class="read-more">
+                    Read Article →
+                </a>
+
+            </article>
+
+
+            <!-- ARTICLE 3 -->
+            <article class="blog-card">
+
+                <span class="category">
+                    Local SEO
+                </span>
+
+                <h3>
+                    How Local Businesses Can Get More Customers From Google
+                </h3>
+
+                <p>
+                    Learn how local businesses can improve their online
+                    visibility and make it easier for nearby customers
+                    to discover them.
+                </p>
+
+                <a href="blog-local-seo.html"
+                   class="read-more">
+                    Read Article →
+                </a>
+
+            </article>
+
+
+            <!-- ARTICLE 4 -->
+            <article class="blog-card">
+
+                <span class="category">
+                    Social Media Marketing
+                </span>
+
+                <h3>
+                    How Instagram Reels Can Help Salons, Gyms & Clothing Stores Grow
+                </h3>
+
+                <p>
+                    Learn how short-form video content can help local
+                    businesses attract attention, showcase their products
+                    and connect with potential customers.
+                </p>
+
+                <a href="blog-instagram-reels.html"
+                   class="read-more">
+                    Read Article →
+                </a>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta">
+
+        <h2>
+            Ready to Grow Your Business Online?
+        </h2>
+
+        <p>
+            MZ Creations helps local businesses build their online presence
+            through digital marketing, social media, SEO and advertising.
+        </p>
+
+        <a href="services.html" class="cta-button">
+            Explore Our Services
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 <strong>MZ CREATIONS</strong>.
+            Grow Your Business Online.
+        </p>
+
+    </footer>
+
+</body>
+</html>
